@@ -1,13 +1,13 @@
 import React from 'react';
-import './styles.css';
+import { ProductWrapper } from './styles';
 import { ProductProps } from './types';
 
 const Product: React.FC<ProductProps> = ({ name, price }) => {
   return (
-    <div className="product">
+    <ProductWrapper>
       <h2>{name}</h2>
       <p>Price: ${price}</p>
-    </div>
+    </ProductWrapper>
   );
 };
 

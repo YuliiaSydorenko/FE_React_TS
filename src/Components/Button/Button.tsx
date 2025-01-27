@@ -1,4 +1,4 @@
-import "./styles.css";
+//import "./styles.css";
 import React from 'react';
 import { ButtonProps } from "./types";
 import { MainButton } from "./styles";
@@ -8,11 +8,12 @@ import { MainButton } from "./styles";
 //   name?: string;
 //   type: 'submit' | 'button' | 'reset';
 //   onClick: () => void;
+//   disabled?: boolean; // Добавляем свойство disabled
 // }
 
-const Button: React.FC<ButtonProps> = ({ name = "SEND", type, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ name = "SEND", type, onClick, disabled }) => {
   return (
-    <MainButton type={type} onClick={onClick}>
+    <MainButton type={type} onClick={onClick} disabled={disabled}>
       {name}
     </MainButton>
   );

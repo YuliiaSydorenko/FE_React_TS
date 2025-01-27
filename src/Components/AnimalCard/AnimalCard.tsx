@@ -2,7 +2,8 @@ import "./styles.css";
 import React from 'react';
 import { AnimalCardProps } from './types';
 
-const AnimalCard: React.FC<AnimalCardProps> = ({ animalName, animalSpecies, animalImg, children }) => {
+const AnimalCard: React.FC<AnimalCardProps> = 
+({ animalName, animalSpecies, animalImg, children }) => {
   return (
     <div className="animal-card-wrapper">
       <h3>{animalName}</h3>

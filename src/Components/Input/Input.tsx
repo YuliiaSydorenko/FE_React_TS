@@ -2,11 +2,12 @@ import React from 'react';
 import './styles.css';
 import { InputProps } from './types';
 
-const Input: React.FC<InputProps> = ({ name, type = "text", placeholder, label }) => {
+const Input: React.FC<InputProps> = ({ name, type = "text", placeholder, label, id }) => {
   return (
     <div className="input-wrapper">
-      <label>{label}</label>
+      <label htmlFor={id}>{label}</label>
       <input 
+        id={id}
         name={name} 
         type={type} 
         placeholder={placeholder} 

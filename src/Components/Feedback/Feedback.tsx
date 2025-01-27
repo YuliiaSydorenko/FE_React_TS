@@ -7,15 +7,15 @@ const Feedback: React.FC<FeedbackProps> = () => {
   const [likes, setLikes] = useState<number>(0);
   const [dislikes, setDislikes] = useState<number>(0);
 
-  const handleLike = () => {
+  const handleLike = (): void => {
     setLikes((prevLikes) => prevLikes + 1);
   };
 
-  const handleDislike = () => {
+  const handleDislike = (): void => {
     setDislikes((prevDislikes) => prevDislikes + 1);
   };
 
-  const resetResults = () => {
+  const resetResults = (): void => {
     setLikes(0);
     setDislikes(0);
   };

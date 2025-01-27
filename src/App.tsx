@@ -1,10 +1,15 @@
 import './App.css';
-import React from 'react';
-import Button from './Components/Button/Button';
-import Counter from './Components/Counter/Counter';
+import GlobalStyles from './styles/GlobalStyles';
+
+// import React from 'react';
+// import Button from './Components/Button/Button';
+// import Counter from './Components/Counter/Counter';
+
+
 //lessons
 // import Lesson06 from './Lessons/Lesson06/lesson06';
-import Lesson07 from './Lessons/Lesson07/lesson07';
+// import Lesson07 from './Lessons/Lesson07/lesson07';
+import Lesson08 from './Lessons/Lesson08/lesson08';
 
 //homeworks
 
@@ -14,11 +19,16 @@ import Lesson07 from './Lessons/Lesson07/lesson07';
 function App() {
   return (
     <div className='app'>
+      <GlobalStyles/>
       {/* Topic: TypeScript - Introduction */}
       {/* <Lesson06/> */}
       {/* Topic: TypeScript - Object types */}
-      <Lesson07/>
+      {/* <Lesson07/> */}
       {/* <Homework07/> */}
+       {/* Topic: Styling components */}
+       <Lesson08 />
+
+
     </div>
   );
 }

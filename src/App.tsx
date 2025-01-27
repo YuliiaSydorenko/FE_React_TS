@@ -1,4 +1,4 @@
-import './App.css';
+//import './App.css'; больше не нужен, т.к. удален div в App.tsx
 import GlobalStyles from './styles/GlobalStyles';
 
 // import React from 'react';
@@ -18,7 +18,7 @@ import Lesson08 from './Lessons/Lesson08/lesson08';
 
 function App() {
   return (
-    <div className='app'>
+    <> 
       <GlobalStyles/>
       {/* Topic: TypeScript - Introduction */}
       {/* <Lesson06/> */}
@@ -29,7 +29,7 @@ function App() {
        <Lesson08 />
 
 
-    </div>
+    </> //больше не нужен, т.к. удален div в App.tsx (фрагмент)
   );
 }
 

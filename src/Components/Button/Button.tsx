@@ -1,6 +1,7 @@
 import "./styles.css";
 import React from 'react';
 import { ButtonProps } from "./types";
+import { MainButton } from "./styles";
 
 // Определение интерфейса для пропсов компонента Button
 // interface ButtonProps {
@@ -11,9 +12,9 @@ import { ButtonProps } from "./types";
 
 const Button: React.FC<ButtonProps> = ({ name = "SEND", type, onClick }) => {
   return (
-    <button className="main-button" type={type} onClick={onClick}>
+    <MainButton type={type} onClick={onClick}>
       {name}
-    </button>
+    </MainButton>
   );
 }
 

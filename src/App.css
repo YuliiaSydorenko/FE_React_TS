@@ -1,5 +1,8 @@
+/*больше не нужен, т.к. удален div в App.tsx
+
+
 .app {
   display: flex;
   flex-direction: column;
   flex: 1;
-}
+} */

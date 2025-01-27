@@ -1,7 +1,8 @@
 import React from 'react';
 import './styles.css';
+import { ProductProps } from './types';
 
-const Product = ({ name, price }) => {
+const Product: React.FC<ProductProps> = ({ name, price }) => {
   return (
     <div className="product">
       <h2>{name}</h2>

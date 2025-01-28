@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../Button/Button';
-import './styles.css';
+import { FeedbackWrapper, FeedbackButtons, LikeButton, DislikeButton, ResetButton, Icon } from './styles';
 import { FeedbackProps } from './types';
 
 const Feedback: React.FC<FeedbackProps> = () => {
@@ -21,28 +21,25 @@ const Feedback: React.FC<FeedbackProps> = () => {
   };
 
   return (
-    <div className="feedback-wrapper">
-      <div className="feedback-buttons">
-        <div className="like-button">
-          <img src="/src/assets/Like.jpg" alt="Like" className="icon" />
+    <FeedbackWrapper>
+      <FeedbackButtons>
+        <LikeButton>
+          <Icon src="/src/assets/Like.jpg" alt="Like" />
           <span>{likes}</span>
           <Button name="Like" type="button" onClick={handleLike} />
-        </div>
-        <div className="dislike-button">
+        </LikeButton>
+        <DislikeButton>
           <Button name="Dislike" type="button" onClick={handleDislike} />
           <span>{dislikes}</span>
-          <img src="/src/assets/down.jpg" alt="Dislike" className="icon" />
-        </div>
-        <div className="reset-button">
+          <Icon src="/src/assets/down.jpg" alt="Dislike" />
+        </DislikeButton>
+        <ResetButton>
           <Button name="Reset Results" type="button" onClick={resetResults} />
-        </div>
-      </div>
-    </div>
+        </ResetButton>
+      </FeedbackButtons>
+    </FeedbackWrapper>
   );
 }
 
 export default Feedback;
-
-
-
 

@@ -1,19 +1,18 @@
 import React from 'react';
-import './styles.css';
+import { InputWrapper, Label, InputElement } from './styles';
 import { InputProps } from './types';
 
 const Input: React.FC<InputProps> = ({ name, type = "text", placeholder, label, id }) => {
   return (
-    <div className="input-wrapper">
-      <label htmlFor={id}>{label}</label>
-      <input 
+    <InputWrapper>
+      <Label htmlFor={id}>{label}</Label>
+      <InputElement 
         id={id}
         name={name} 
         type={type} 
         placeholder={placeholder} 
-        className="input" 
       />
-    </div>
+    </InputWrapper>
   );
 }
 

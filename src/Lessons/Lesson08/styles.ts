@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import Example1 from '../../assets/avatar.jpg';
-import Example2 from '../../assets/logo.jpg';
+//import Example1 from '../../assets/avatar.jpg';
+//import Example2 from '../../assets/logo.jpg';
 
 interface BoxInfoStyledProps {
   primary?: boolean;

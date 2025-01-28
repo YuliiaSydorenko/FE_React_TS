@@ -11,7 +11,7 @@ import { MainButton } from "./styles";
 //   disabled?: boolean; // Добавляем свойство disabled
 // }
 
-const Button: React.FC<ButtonProps> = ({ name = "SEND", type, onClick, disabled }) => {
+const Button: React.FC<ButtonProps> = ({ name = "SEND", type=`button`, onClick, disabled }) => {
   return (
     <MainButton type={type} onClick={onClick} disabled={disabled}>
       {name}

@@ -2,7 +2,7 @@ import React from 'react';
 import { InputWrapper, Label, InputElement } from './styles';
 import { InputProps } from './types';
 
-const Input: React.FC<InputProps> = ({ name, type = "text", placeholder, label, id }) => {
+const Input: React.FC<InputProps> = ({ name, type = "text", placeholder, label, id, value, onChange }) => {
   return (
     <InputWrapper>
       <Label htmlFor={id}>{label}</Label>
@@ -11,6 +11,8 @@ const Input: React.FC<InputProps> = ({ name, type = "text", placeholder, label, 
         name={name} 
         type={type} 
         placeholder={placeholder} 
+        value={value}
+        onChange={onChange}
       />
     </InputWrapper>
   );

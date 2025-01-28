@@ -7,3 +7,14 @@ export const ProductWrapper = styled.div`
   border-radius: 5px;
   text-align: center;
 `;
+
+export const ProductTitle = styled.h2`
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+`;
+
+export const ProductPrice = styled.p`
+  font-size: 26px;
+  color: blue;
+`;

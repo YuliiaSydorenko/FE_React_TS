@@ -39,8 +39,8 @@ const Homework09: React.FC = () => {
         />
         <Button onClick={handleSubmit} />
         <ResultWrapper>
-          <div>Name: {submittedName}</div>
-          <div>Age: {submittedAge}</div>
+          {submittedName && <div>Name: {submittedName}</div>}
+          {submittedAge && <div>Age: {submittedAge}</div>}
         </ResultWrapper>
       </InputsContainer>
     </HomeworkWrapper>

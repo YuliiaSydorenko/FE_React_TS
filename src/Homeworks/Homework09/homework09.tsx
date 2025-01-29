@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent } from 'react';
-import Input from './Input';
-import Button from './Button';
+import Input from '../../Components/Input/Input';
+import Button from '../../Components/Button/Button';
 import { HomeworkWrapper, InputsContainer, ResultWrapper } from './styles';
 
 const Homework09: React.FC = () => {

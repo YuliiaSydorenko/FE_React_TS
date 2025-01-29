@@ -22,6 +22,9 @@ export const ButtonWrapper = styled.button`
   border: none;
   cursor: pointer;
   margin-top: 10px;
+  &:hover {
+    background-color: #0056b3;
+  }
 `;
 
 export const HomeworkWrapper = styled.div`
@@ -30,6 +33,9 @@ export const HomeworkWrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
 export const InputsContainer = styled.div`
@@ -38,6 +44,7 @@ export const InputsContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 300px;
+  gap: 10px;
 `;
 
 export const ResultWrapper = styled.div`
@@ -45,4 +52,7 @@ export const ResultWrapper = styled.div`
   font-size: 18px;
   color: #333;
   text-align: center;
+  div {
+    margin-bottom: 10px;
+  }
 `;

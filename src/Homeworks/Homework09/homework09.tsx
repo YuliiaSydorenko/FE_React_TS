@@ -4,22 +4,30 @@ import Button from '../../Components/Button/Button';
 import { HomeworkWrapper, InputsContainer, ResultWrapper } from './styles';
 
 const Homework09: React.FC = () => {
+  // State variables for name and age input fields
   const [name, setName] = useState<string>('');
   const [age, setAge] = useState<string>('');
   const [submittedName, setSubmittedName] = useState<string>('');
   const [submittedAge, setSubmittedAge] = useState<string>('');
 
+  // Handler for name input change
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
   };
 
+  // Handler for age input change
   const handleAgeChange = (event: ChangeEvent<HTMLInputElement>) => {
     setAge(event.target.value);
   };
 
+  // Handler for form submission
   const handleSubmit = () => {
-    setSubmittedName(name);
-    setSubmittedAge(age);
+    if (name && age) {
+      setSubmittedName(name);
+      setSubmittedAge(age);
+    } else {
+      alert('Please fill in both fields.');
+    }
   };
 
   return (
@@ -37,7 +45,7 @@ const Homework09: React.FC = () => {
           value={age}
           onChange={handleAgeChange}
         />
-        <Button onClick={handleSubmit} />
+        <Button name="Submit" onClick={handleSubmit} />
         <ResultWrapper>
           {submittedName && <div>Name: {submittedName}</div>}
           {submittedAge && <div>Age: {submittedAge}</div>}

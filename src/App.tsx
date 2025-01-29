@@ -1,3 +1,5 @@
+import React from 'react';
+import Lesson10 from './Lessons/Lesson10/lesson10';
 import GlobalStyles from './styles/GlobalStyles';
 
 // import React from 'react';
@@ -12,7 +14,7 @@ import GlobalStyles from './styles/GlobalStyles';
 
 //homeworks
 //import Homework08 from './Homeworks/Homework08/Homework08'; 
-import Homework09 from './Homeworks/Homework09/homework09'; 
+//import Homework09 from './Homeworks/Homework09/homework09'; 
 
 
 //consultations
@@ -21,7 +23,7 @@ import Homework09 from './Homeworks/Homework09/homework09';
 function App() {
   return (
     <> 
-      <GlobalStyles/>
+      {/* <GlobalStyles/> */}
       {/* Topic: TypeScript - Introduction */}
       {/* <Lesson06/> */}
       {/* Topic: TypeScript - Object types */}
@@ -32,7 +34,9 @@ function App() {
        {/* <Homework08/> */}
        {/* <Lesson09 /> */}
 
-       <Homework09/>
+       {/* <Homework09/> */}
+
+       <Lesson10 /> 
     </> //больше не нужен, т.к. удален div в App.tsx (фрагмент)
   );
 }

@@ -9,7 +9,7 @@ export const InputWrapper = styled.div`
 
 export const Label = styled.label`
   font-size: 16px;
-  color: #610559;
+  color: #ac094d;
 `;
 
 export const InputElement = styled.input`

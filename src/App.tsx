@@ -8,10 +8,13 @@ import GlobalStyles from './styles/GlobalStyles';
 // import Lesson06 from './Lessons/Lesson06/lesson06';
 // import Lesson07 from './Lessons/Lesson07/lesson07';
 // import Lesson08 from './Lessons/Lesson08/lesson08';
-import Lesson09 from './Lessons/Lesson09/lesson09'
+// import Lesson09 from './Lessons/Lesson09/lesson09'
 
 //homeworks
 //import Homework08 from './Homeworks/Homework08/Homework08'; 
+import Homework09 from './Homeworks/Homework09/homework09'; 
+
+
 //consultations
 // import Consultation03 from './consultations/Consultation03/Consultation03';
 
@@ -27,8 +30,9 @@ function App() {
        {/* Topic: Styling components */}
        {/* <Lesson08 /> */}
        {/* <Homework08/> */}
+       {/* <Lesson09 /> */}
 
-       <Lesson09 />
+       <Homework09/>
     </> //больше не нужен, т.к. удален div в App.tsx (фрагмент)
   );
 }

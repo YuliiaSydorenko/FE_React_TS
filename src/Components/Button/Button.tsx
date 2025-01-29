@@ -1,6 +1,6 @@
 //import "./styles.css";
 import React from 'react';
-import { ButtonProps } from "./types";
+//import { ButtonProps } from "./types";
 import { MainButton } from "./styles";
 
 // Определение интерфейса для пропсов компонента Button
@@ -11,12 +11,18 @@ import { MainButton } from "./styles";
 //   disabled?: boolean; // Добавляем свойство disabled
 // }
 
-const Button: React.FC<ButtonProps> = ({ name = "SEND", type=`button`, onClick, disabled }) => {
+
+
+interface ButtonProps {
+  onClick: () => void;
+}
+
+const Button: React.FC<ButtonProps> = ({ onClick }) => {
   return (
-    <MainButton type={type} onClick={onClick} disabled={disabled}>
-      {name}
+    <MainButton onClick={onClick}>
+      Submit
     </MainButton>
   );
-}
+};
 
 export default Button;

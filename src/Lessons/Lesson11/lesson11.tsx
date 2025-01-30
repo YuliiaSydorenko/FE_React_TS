@@ -39,6 +39,10 @@ const Lesson11 = () => {
     window.location.reload();
   };
 
+  const deleteFact = (index: number) => {
+    setCatFacts((prevFacts) => prevFacts.filter((_, i) => i !== index));
+  };
+
   useEffect(() => {}, []);
 
   return (
@@ -51,9 +55,12 @@ const Lesson11 = () => {
       {catFacts.length > 0 && (
         <DataContainer>
           {catFacts.map((fact, index) => (
-            <div key={index} className="fact-card" style={{ display: 'flex', alignItems: 'center' }}>
-              <ResultBlock style={{ marginRight: '10px' }}>{`${index + 1}. ${fact}`}</ResultBlock>
-              <CatImage src={`https://cataas.com/cat?${index}`} alt="Cat" style={{ width: '100px', height: '100px', borderRadius: '8px' }} />
+            <div key={index} className="fact-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <ResultBlock style={{ marginBottom: '10px' }}>{`${index + 1}. ${fact}`}</ResultBlock>
+                <Button onClick={() => deleteFact(index)} style={{ alignSelf: 'flex-start' }}>DELETE</Button>
+              </div>
+              <CatImage src={`https://cataas.com/cat?${index}`} alt="Cat" style={{ height: 'auto', maxHeight: '100px', borderRadius: '8px' }} />
             </div>
           ))}
         </DataContainer>

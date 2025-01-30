@@ -52,6 +52,7 @@ const Lesson11 = () => {
       {!loading && !isFirstLoad && catFacts.length === 0 && <ErrorBlock>Ошибка загрузки данных</ErrorBlock>}
       {catFacts.length > 0 && <Button onClick={deleteAllData}>DELETE ALL DATA</Button>}
       {loading && <Spinner />}
+      {error && !loading && <Button onClick={fetchCatFact}>RETRY</Button>}
       {catFacts.length > 0 && (
         <DataContainer>
           {catFacts.map((fact, index) => (

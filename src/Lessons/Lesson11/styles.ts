@@ -68,3 +68,11 @@ export const Button = styled.button`
         background: #2d558a;
     }
 `;
+
+export const CatImage = styled.img`
+    transition: transform 0.3s ease-in-out;
+    
+    &:hover {
+        transform: scale(2.0);
+    }
+`;

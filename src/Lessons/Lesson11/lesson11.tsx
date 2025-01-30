@@ -7,6 +7,7 @@ import {
   ErrorBlock,
   Button,
   DataContainer,
+  CatImage,
 } from "./styles";
 
 const Lesson11 = () => {
@@ -52,7 +53,7 @@ const Lesson11 = () => {
           {catFacts.map((fact, index) => (
             <div key={index} className="fact-card" style={{ display: 'flex', alignItems: 'center' }}>
               <ResultBlock style={{ marginRight: '10px' }}>{`${index + 1}. ${fact}`}</ResultBlock>
-              <img src={`https://cataas.com/cat?${index}`} alt="Cat" style={{ width: '100px', height: '100px', borderRadius: '8px' }} />
+              <CatImage src={`https://cataas.com/cat?${index}`} alt="Cat" style={{ width: '100px', height: '100px', borderRadius: '8px' }} />
             </div>
           ))}
         </DataContainer>

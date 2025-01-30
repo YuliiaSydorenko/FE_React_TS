@@ -1,6 +1,7 @@
 import React from 'react';
 import Lesson10 from './Lessons/Lesson10/lesson10';
 import GlobalStyles from './styles/GlobalStyles';
+import Homework10 from './Homeworks/Homework10/Homework10';
 
 // import React from 'react';
 // import Button from './Components/Button/Button';
@@ -15,7 +16,7 @@ import GlobalStyles from './styles/GlobalStyles';
 //homeworks
 //import Homework08 from './Homeworks/Homework08/Homework08'; 
 //import Homework09 from './Homeworks/Homework09/homework09'; 
-
+//import Homework10 from './Homeworks/Homework10/Homework10';
 
 //consultations
 // import Consultation03 from './consultations/Consultation03/Consultation03';
@@ -33,10 +34,10 @@ function App() {
        {/* <Lesson08 /> */}
        {/* <Homework08/> */}
        {/* <Lesson09 /> */}
-
        {/* <Homework09/> */}
+       {/* <Lesson10 />  */}
 
-       <Lesson10 /> 
+       <Homework10/>
     </> //больше не нужен, т.к. удален div в App.tsx (фрагмент)
   );
 }

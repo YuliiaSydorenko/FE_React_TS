@@ -43,7 +43,12 @@ function Homework10() {
         }
     }, [inputValue1]);
 
-    
+    // useEffect(() => {
+    //     if (inputValue2) {
+    //         fetchDogImage();
+    //     }
+    // }, [inputValue2]);
+
     return (
         <HomeworkWrapper>
             <InputsContainer>
@@ -59,10 +64,10 @@ function Homework10() {
                     value={inputValue2}
                     onChange={onChangeInput2}
                 />
-                {loading && <SpinnerComponent />}
-                {imageUrl && <ResultBlock><img src={imageUrl} alt="Random Dog" /></ResultBlock>}
-                {error && <ErrorBlock>{error}</ErrorBlock>}
             </InputsContainer>
+            {loading && <SpinnerComponent />} 
+            {imageUrl && <ResultBlock><img src={imageUrl} alt="Random Dog" /></ResultBlock>}
+            {error && <ErrorBlock>{error}</ErrorBlock>} 
         </HomeworkWrapper>
     )
 }

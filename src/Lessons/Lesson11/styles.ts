@@ -24,6 +24,7 @@ export const DataContainer = styled.div`
     border-radius: 8px;
     background: #f9f9f9;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #e3d3bb;
 `;
 
 export const Card = styled.div`
@@ -36,6 +37,7 @@ export const Card = styled.div`
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background: white;
     text-align: center;
+    background-color: #dfdcd9;
 `;
 
 export const ResultBlock = styled.div`
@@ -59,11 +61,9 @@ export const Button = styled.button`
     border-radius: 5px;
     background: #103552b0;
     color: white;
-
     &:hover {
         background: #7aaadd;
     }
-
     &:active {
         background: #2d558a;
     }

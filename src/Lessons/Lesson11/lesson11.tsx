@@ -49,6 +49,7 @@ const Lesson11 = () => {
 
   useEffect(() => {}, []);
 
+
   return (
     <Lesson11Wrapper>
       {isFirstLoad && !loading && <Button onClick={fetchCatFacts}>GET INFO ABOUT CATS</Button>}
@@ -60,7 +61,7 @@ const Lesson11 = () => {
         <DataContainer>
           {catFactsGroups.map((group, groupIndex) => (
             <Card key={group.id}>
-              <h3>Group {groupIndex + 1}</h3>
+              <h4>Group {groupIndex + 1}</h4>
               {group.facts.map((fact, index) => (
                 <div key={fact.id} className="fact-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
@@ -78,5 +79,6 @@ const Lesson11 = () => {
     </Lesson11Wrapper>
   );
 };
+
 
 export default Lesson11;

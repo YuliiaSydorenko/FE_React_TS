@@ -7,7 +7,7 @@ const MyComponentIMG = () => {
     return (
         <div>
             {/* ...existing code... */}
-            <CatImage src="path_to_cat_image.jpg" alt="Cat" />
+            <CatImage src="https://cataas.com/cat" alt="Cat" />
             {/* ...existing code... */}
         </div>
     );

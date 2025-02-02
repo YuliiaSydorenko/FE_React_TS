@@ -1,25 +1,31 @@
-import React, { ChangeEvent } from 'react';
-import { InputWrapper, Label, InputElement } from './styles';
+import { ErrorMessage, InputContainer, InputElement, Label } from "./styles";
+import { InputProps } from './types'
 
-interface InputProps {
-  name: string;
-  label: string;
-  value: string;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-}
-
-const Input: React.FC<InputProps> = ({ name, label, value, onChange }) => {
+function Input({
+  name,
+  type = 'text',
+  placeholder,
+  label,
+  id,
+  value,
+  onChange,
+  error
+}: InputProps) {
   return (
-    <InputWrapper>
-      <Label htmlFor={name}>{label}</Label>
+    <InputContainer>
+      {label && <Label htmlFor={id}>{label}</Label>}
       <InputElement
-        id={name}
         name={name}
+        id={id}
+        type={type}
+        placeholder={placeholder}
         value={value}
         onChange={onChange}
       />
-    </InputWrapper>
+      <ErrorMessage>{error}</ErrorMessage>
+    </InputContainer>
   );
-};
+}
 
 export default Input;
+

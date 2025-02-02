@@ -1,9 +1,6 @@
-import React from 'react';
+//import React from 'react';
 
 import GlobalStyles from './styles/GlobalStyles';
-
-import Homework10 from './Homeworks/Homework10/Homework10';
-import Lesson11 from './Lessons/Lesson11/Lesson11';
 
 // import React from 'react';
 // import Button from './Components/Button/Button';
@@ -14,11 +11,15 @@ import Lesson11 from './Lessons/Lesson11/Lesson11';
 // import Lesson07 from './Lessons/Lesson07/lesson07';
 // import Lesson08 from './Lessons/Lesson08/lesson08';
 // import Lesson09 from './Lessons/Lesson09/lesson09'
+//import Lesson11 from './Lessons/Lesson11/Lesson11';
+// import Lesson12 from './Lessons/Lesson12/lesson12';
+
 
 //homeworks
 //import Homework08 from './Homeworks/Homework08/Homework08'; 
 //import Homework09 from './Homeworks/Homework09/homework09'; 
 //import Homework10 from './Homeworks/Homework10/Homework10';
+import Homework12 from './Homeworks/Homework12/Homework12';
 
 //consultations
 // import Consultation03 from './consultations/Consultation03/Consultation03';
@@ -39,9 +40,11 @@ function App() {
       {/* <Homework09/> */}
       {/* <Lesson10 />  */}
       {/* <Homework10/> */}
-
-      <Lesson11 />
+      {/* <Lesson11 /> */}
+      {/* --Topic: formik, yup */}
+      {/* <Lesson12 /> */}
       {/* <Consultation03/> */}
+      <Homework12 /> 
 
       </>
   );

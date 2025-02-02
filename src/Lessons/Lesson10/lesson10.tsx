@@ -1,8 +1,9 @@
-import React, { useState, useEffect, ChangeEvent } from 'react';
+import * as React from 'react';
+import { useState, useEffect, ChangeEvent } from 'react';
 import axios from 'axios';
-import Button from "../../Components/Button/Button";
-import Spinner from "../../Components/Spinner/Spinner"; // Импортируем спиннер
-import Input from "../../Components/Input/Input"; // Импортируем Input
+import Button from "Components/Button/Button";
+import Spinner from "Components/Spinner/Spinner"; // Импортируем спиннер
+import Input from "Components/Input/Input"; // Импортируем Input
 import { ButtonWrapper, Lesson10Wrapper, ResultBlock, ErrorBlock } from "./styles";
 
 function Lesson10() {

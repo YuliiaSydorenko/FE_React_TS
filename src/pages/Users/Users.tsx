@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-import Button from "components/Button/Button"
+import Button from "Components/Button/Button"
 import { Title, UsersPage } from "./styles"
 
 function Users() {

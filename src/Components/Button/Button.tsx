@@ -1,28 +1,24 @@
-//import "./styles.css";
-import React from 'react';
-//import { ButtonProps } from "./types";
+import { ButtonProps } from "./types";
 import { MainButton } from "./styles";
+// import {Event} from 'react';
 
-// Определение интерфейса для пропсов компонента Button
 // interface ButtonProps {
-//   name?: string;
-//   type: 'submit' | 'button' | 'reset';
-//   onClick: () => void;
-//   disabled?: boolean; // Добавляем свойство disabled
+//   name?: string,
+//   type: 'submit' | 'button' | 'reset',
+//   onClick: () => void
 // }
 
-interface ButtonProps {
-  name: string;
-  onClick: () => void;
-  disabled?: boolean; // Добавляем свойство disabled
-}
-
-const Button: React.FC<ButtonProps> = ({ name, onClick, disabled }) => {
+function Button({
+  name = "SEND",
+  type = "button",
+  onClick,
+  disabled = false,
+  isRed = false,
+}: ButtonProps) {
   return (
-    <MainButton onClick={onClick} disabled={disabled}>
+    <MainButton type={type} onClick={onClick} disabled={disabled} $isRed={isRed}>
       {name}
     </MainButton>
   );
-};
-
+}
 export default Button;

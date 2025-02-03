@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Spinner from "../../Components/Spinner/Spinner";
+//import * as React from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import Spinner from "Components/Spinner/Spinner";
 import {
   Lesson11Wrapper,
   ResultBlock,
@@ -31,7 +32,7 @@ const Lesson11 = () => {
         { id: newFactId, facts: [{ id: newFactId, text: result.fact }] },
       ]);
     } catch (error: any) {
-      console.log(error.message);
+     
       setError(error.message);
     } finally {
       setLoading(false);
@@ -48,7 +49,6 @@ const Lesson11 = () => {
   };
 
   useEffect(() => {}, []);
-
 
   return (
     <Lesson11Wrapper>
@@ -79,6 +79,5 @@ const Lesson11 = () => {
     </Lesson11Wrapper>
   );
 };
-
 
 export default Lesson11;

@@ -1,53 +1,66 @@
-//import React from 'react';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import GlobalStyles from './styles/GlobalStyles';
 
-// import React from 'react';
-// import Button from './Components/Button/Button';
-// import Counter from './Components/Counter/Counter';
-
 //lessons
-// import Lesson06 from './Lessons/Lesson06/lesson06';
-// import Lesson07 from './Lessons/Lesson07/lesson07';
-// import Lesson08 from './Lessons/Lesson08/lesson08';
-// import Lesson09 from './Lessons/Lesson09/lesson09'
-//import Lesson11 from './Lessons/Lesson11/Lesson11';
-// import Lesson12 from './Lessons/Lesson12/lesson12';
-
+// import Lesson06 from './lessons/Lesson06/Lesson06';
+// import Lesson07 from './lessons/Lesson07/Lesson07';
+// import Lesson08 from './lessons/Lesson08/Lesson08';
+// import Lesson09 from './lessons/Lesson09/Lesson09';
+// import Lesson10 from './lessons/Lesson10/Lesson10';
+// import Lesson12 from 'lessons/Lesson12/Lesson12';
+//---Lesson 13
+import Layout from './Components/Layout/Layout';
+import Home from './pages/Home/Home';
+import About from './pages/About/About';
+import Users from './pages/Users/Users';
+import User from './pages/Users/components/User/User';
 
 //homeworks
-//import Homework08 from './Homeworks/Homework08/Homework08'; 
-//import Homework09 from './Homeworks/Homework09/homework09'; 
-//import Homework10 from './Homeworks/Homework10/Homework10';
-import Homework12 from './Homeworks/Homework12/Homework12';
-import Homework10 from 'Homeworks/Homework10/Homework10';
+// import Homework08 from './homeworks/Homework08/Homework08';
+// import Homework09 from './homeworks/Homework09/Homework09';
+// import Homework10 from './homeworks/Homework10/Homework10';
+// import Homework12 from 'homeworks/Homework12/Homework12';
 
 //consultations
 // import Consultation03 from './consultations/Consultation03/Consultation03';
+// import Consultation_04 from './consultations/Consultation_04/Consultation_04';
 
 function App() {
   return (
-    <> 
-      <GlobalStyles/>
-      {/* Topic: TypeScript - Introduction */}
+    //BrowserRouter - компонент из react-router-dom, который позволяет нам работать с маршрутами
+    // по всему приложению
+    <BrowserRouter>
+      <GlobalStyles />
+      <Layout>
+        {/* Routes - собирает все маршруты приложения */}
+        <Routes>
+          {/* Route - компонент, в который передаётся маршрут и контент, 
+         который нужно отрисовать по этому маршруту в Layout */}
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/users' element={<Users />} />
+          <Route path='/users/user' element={<User />} />
+        </Routes>
+      </Layout>
+      {/* --Topic: TypeScript - Introduction */}
       {/* <Lesson06/> */}
-      {/* Topic: TypeScript - Object types */}
-      {/* <Lesson07/> */}
-      {/* <Homework07/> */}
-      {/* Topic: Styling components */}
+      {/* <Consultation03 /> */}
+      {/* --Topic: TypeScript - Object types, enum */}
+      {/* <Lesson07 /> */}
+      {/* --Topic: Styling components */}
       {/* <Lesson08 /> */}
-      {/* <Homework08/> */}
+      {/* <Homework08 /> */}
+      {/* --Topic: Control components, useEffect */}
       {/* <Lesson09 /> */}
-      {/* <Homework09/> */}
-      {/* <Lesson10 />  */}
-      {/* <Homework10/> */}
-      {/* <Lesson11 /> */}
+      {/* <Consultation_04 /> */}
+      {/* <Homework09 /> */}
+      {/* --Topic: useEffect, axios */}
+      {/* <Lesson10 /> */}
+      {/* <Homework10 /> */}
       {/* --Topic: formik, yup */}
       {/* <Lesson12 /> */}
-      {/* <Consultation03/> */}
-      <Homework12 /> 
-
-      </>
+      {/* <Homework12/> */}
+    </BrowserRouter>
   );
 }
 

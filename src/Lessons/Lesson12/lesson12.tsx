@@ -1,4 +1,4 @@
-import LoginForm from "../../Components/LoginForm/LoginForm"
+import LoginForm from "components/LoginForm/LoginForm"
 import { Lesson12Wrapper } from "./styles"
 
 function Lesson12 (){

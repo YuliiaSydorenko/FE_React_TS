@@ -1,49 +1,34 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
-export const FeedbackWrapper = styled.div`
+// export const = styled.``
+
+export const FeedbackContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  gap: 30px;
+  min-width: 800px;
+  padding: 20px;
+  background-color: rgb(129, 212, 212);
+`
+
+export const FeedbackResultContainer = styled.div`
+  display: flex;
+  gap: 30px;
+  width: 100%;
+`
+
+export const LikeDislikeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   gap: 20px;
-`;
-
-export const FeedbackButtons = styled.div`
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 10px;
-`;
+  width: 100%;
+`
 
-export const LikeButton = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-`;
+export const Result = styled.div`
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(17, 17, 70);
+`
 
-export const DislikeButton = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-`;
 
-export const ResetButton = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-`;
-
-export const Icon = styled.img`
-  width: 24px;
-  height: 24px;
-`;
-
-export const MainButton = styled.button`
-  padding: 10px 20px;
-  background-color: rgb(48, 145, 132);
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  color: rgb(46, 66, 66);
-  width: 150px;
-`;

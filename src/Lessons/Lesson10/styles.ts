@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+
 export const Lesson10Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -7,9 +8,11 @@ export const Lesson10Wrapper = styled.div`
   gap: 20px;
   padding: 40px;
 `
+
 export const ButtonWrapper = styled.div`
   width: 300px;
 `
+
 export const ResultBlock = styled.div`
   width: 600px;
   padding: 20px;
@@ -18,12 +21,14 @@ export const ResultBlock = styled.div`
   font-size: 28px;
   font-weight: bold;
 `
+
 export const ErrorBlock = styled.div`
   width: 600px;
   padding: 20px;
-  background-color: #FF6A6A;
-  border-radius: 2px solid red;
+  background-color: #eb9378;
+  border: 2px solid #e61212;
+  border-radius: 6px;
+  color: #e61212;
   font-size: 28px;
   font-weight: bold;
-  color: white;
 `

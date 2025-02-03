@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 
+// export const = styled.``
+
 export const AnimalCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -7,23 +9,17 @@ export const AnimalCardWrapper = styled.div`
   justify-content: center;
   gap: 20px;
   min-width: 300px;
-  min-height: 350px;
+  min-height: 400px;
   background-color: rgb(145, 218, 211);
   border-radius: 6px;
   font-size: 24px;
-`;
+`
 
 export const CardImage = styled.img`
   width: 100px;
-`;
+`
+export const Title = styled.h3``
 
-export const AnimalName = styled.h3`
-  font-size: 28px;
-  font-weight: bold;
-  color: #333;
-`;
+export const SpeciesBlock = styled.div``
 
-export const AnimalSpecies = styled.div`
-  font-size: 20px;
-  color: #666;
-`;
+

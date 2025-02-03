@@ -6,6 +6,7 @@ import Button from "../Button/Button";
 import Input from "../Input/Input";
 import { LoginFormContainer, Title, InputsContainer } from "./styles";
 import { LoginFormValues } from "./types";
+import { ChangeEvent } from "react";
 
 function LoginForm() {
   // const [email, setEmail] = useState<string>("");
@@ -26,7 +27,7 @@ function LoginForm() {
   //   console.log(password);
   // };
 
-  // минимум 8 символов, специальный символ и хотя бы одна заглавная буква
+  //минимум 8 символов, специальный символ и хотя бы одна заглавная буква
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
   //--- Создание валидационной схемы с помощью Yup
@@ -34,27 +35,29 @@ function LoginForm() {
     email: Yup.string()
       .required('Field email is required')
       .email('Field has type email')
-      .max(25, 'Max 25 symbols')
+      .max(20, 'Max 20 symbols')
       .min(10, 'Min 10 symbols')
       .typeError('Email must be string'),
+    // password: Yup.number()
+    //   .required('Field password is required')
+    //   .typeError('Password must be number')
+    //   .test('Check min password length', 'Min 10 symbols', (value) => String(value).length >= 10)
+    //   .test('Check max password length', 'Max 20 symbols', (value) => String(value).length <= 20)
     password: Yup.string()
-      .required('Field password is required')
-      .matches(passwordRegex, 'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character')
-      .min(10, 'Min 10 symbols')
-      .max(20, 'Max 20 symbols')
-      .typeError('Password must be string')
-  });
+      .required('Required')
+      .matches(passwordRegex, 'Password must be at least 8 characters long, include uppercase, lowercase and special character')
+  })
 
   //--- Настройка формы. useFormik, как аргумент принимает объект настройки, для определенной формы
-  //При вызове useFormik возвращается объект, в котором хранятся значения из полей, ошибки, различные методы для работы с формой
+  //При вызове useFormik возвращается объект, в котором храняться значения из полей, ошибки, различные методы для работы с формой
   const formik = useFormik({
     //в объекте 2 обязательных свойства initialValues и onSubmit
-    //initialValues - объект, в котором ключoм является name из поля, а значение initialValue
+    //initialValues - объект, в котором ключjм является name из поля, а значение initialValue
     initialValues: {
       email: '',
       password: ''
     } as LoginFormValues,
-    //validationSchema - свойство, в значение которого нужно передать схему для валидации
+    //validationSchema - свойство, в значение которого нужно передать схеиу для валидации
     validationSchema: schema,
     // свойство validateOnChange по умолчанию true, значит валидация будет происходить при каждом изменении в форме
     validateOnChange: false,
@@ -62,9 +65,15 @@ function LoginForm() {
     onSubmit: (values: LoginFormValues) => {
       console.table(values)
     }
-  });
+  })
 
   console.log(formik);
+
+  const handlePasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
+    formik.setFieldValue('password', event.target.value)
+    formik.validateField('password')
+  }
+
 
   return (
     // <LoginFormContainer onSubmit={onLogin}>
@@ -90,7 +99,8 @@ function LoginForm() {
           name="password"
           label="Password*"
           value={formik.values.password}
-          onChange={formik.handleChange}
+          // onChange={formik.handleChange}
+          onChange={handlePasswordChange}
           placeholder="Enter your password"
           error={formik.errors.password}
         />
@@ -99,5 +109,4 @@ function LoginForm() {
     </LoginFormContainer>
   );
 }
-
 export default LoginForm;

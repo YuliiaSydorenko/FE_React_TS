@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import Button from '../Button/Button';
-import { CounterWrapper, ButtonWrapper, ResultContainer } from './styles';
+import Button from "../Button/Button";
+import { ButtonWrapper, CounterWrapper, ResultContainer } from "./styles";
+import { useState } from "react";
 
-const Counter: React.FC = () => {
+function Counter() {
   const [counter, setCounter] = useState<number>(0);
 
   const onPlusClick = (): void => {
@@ -11,7 +11,7 @@ const Counter: React.FC = () => {
     });
   };
 
-  console.log('counter in Counter Component', counter);
+  console.log("counter in Counter Component", counter);
 
   const onMinusClick = (): void => {
     setCounter((prevValue) => prevValue - 1);

@@ -1,8 +1,7 @@
-import React from 'react';
 import { SpinnerComponent } from "./styles";
 
-const Spinner: React.FC = () => {
-  return <SpinnerComponent />;
-};
+function Spinner (){
+ return <SpinnerComponent></SpinnerComponent>
+}
 
 export default Spinner;

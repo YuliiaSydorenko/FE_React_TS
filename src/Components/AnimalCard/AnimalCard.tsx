@@ -1,18 +1,18 @@
-import React from 'react';
-import { AnimalCardWrapper, 
-  CardImage, 
-  AnimalName, 
-  AnimalSpecies } 
-  from './styles';
-import { AnimalCardProps } from './types';
+import {
+  AnimalCardWrapper,
+  CardImage,
+  Title,
+  SpeciesBlock
+} from "./styles";
+import { AnimalCardProps } from "./types";
 
-const AnimalCard: React.FC<AnimalCardProps> = ({ animalName, animalSpecies, animalImg, children }) => {
+function AnimalCard({ animalName, animalSpecies, animalImg, children }: AnimalCardProps) {
   return (
     <AnimalCardWrapper>
-      <AnimalName>{animalName}</AnimalName>
-      <AnimalSpecies>{animalSpecies}</AnimalSpecies>
-      <CardImage src={animalImg} alt={animalName} />
-      {/* prop children позволяет добавлять дополнительную структуру (JSX, компоненты) в компонент */}
+      <Title>{animalName}</Title>
+      <SpeciesBlock>{animalSpecies}</SpeciesBlock>
+      <CardImage src={animalImg} />
+      {/* prop children позволяет добавлять дополнительную структуру(JSX, компоненты) в компонент */}
       {children}
     </AnimalCardWrapper>
   );

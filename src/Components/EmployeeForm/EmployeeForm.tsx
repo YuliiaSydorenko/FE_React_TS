@@ -1,110 +1,87 @@
-import React from 'react';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import {
-  FormContainer,
-  FormField,
-  Label,
-  StyledInput,
-  ErrorMessageStyled,
-  SubmitButton,
-  Title
-} from './Styles';
+import { useFormik } from "formik";
+import * as Yup from 'yup'
 
-const EmployeeForm: React.FC = () => {
+import { Checkbox, CheckboxContainer, CheckboxLabel, EmployeeFormContainer } from "./Styles";
+import { EmployeeFormValues } from "./types";
+import Input from "Components/Input/Input";
+import Button from "Components/Button/Button";
+
+function EmployeeForm() {
+  const validationSchema = Yup.object().shape({
+    fullName: Yup.string()
+      .required('Required field')
+      .min(5, 'Min 2 symbols')
+      .max(50, 'Max 50 symbols')
+    ,
+    age: Yup.number()
+      .required('Required field')
+      .min(18, 'Min age 18')
+      .max(80, 'Max age 18')
+      .typeError('Type number')
+    ,
+    jobTitle: Yup.string()
+      .max(30, 'Max 50 symbols')
+    ,
+    agreement: Yup.boolean()
+      .oneOf([true], 'Accept agreement')
+  })
+
   const formik = useFormik({
     initialValues: {
       fullName: '',
       age: '',
       jobTitle: '',
-      terms: false,
-    },
-    validationSchema: Yup.object({
-      fullName: Yup.string()
-        .min(5, 'Минимальное количество символов - 5')
-        .max(50, 'Максимальное количество символов - 50')
-        .required('Обязательное поле'),
-      age: Yup.number()
-        .min(18, 'Минимальное значение - 18')
-        .max(80, 'Максимальное значение - 80')
-        .required('Обязательное поле'),
-      jobTitle: Yup.string().max(30, 'Максимальное количество символов - 30'),
-      terms: Yup.boolean().oneOf([true], 'Необходимо принять правила использования'),
-    }),
-    onSubmit: (values) => {
-      console.log(values);
-    },
-  });
+      agreement: false
+    } as EmployeeFormValues,
+    validationSchema,
+    validateOnChange: false,
+    onSubmit: (values: EmployeeFormValues) => {
+      console.table(values);
+    }
+  })
 
   return (
-    <FormContainer onSubmit={formik.handleSubmit}>
-      <Title>Employee Form</Title>
-      <FormField>
-        <Label htmlFor="fullName">Full Name</Label>
-        <StyledInput
-          type="text"
-          id="fullName"
-          name="fullName"
+    <EmployeeFormContainer onSubmit={formik.handleSubmit}>
+      <Input
+        name='fullName'
+        id='full_name_id'
+        label='Full Name*'
+        placeholder="Enter your full name"
+        value={formik.values.fullName}
+        onChange={formik.handleChange}
+        error={formik.errors.fullName}
+      />
+      <Input
+        name='age'
+        id='age_id'
+        label='Age*'
+        placeholder="Enter your age"
+        value={formik.values.age}
+        onChange={formik.handleChange}
+        error={formik.errors.age}
+      />
+      <Input
+        name='jobTitle'
+        id='job_title_id'
+        label='Job Title'
+        placeholder="Enter your job title"
+        value={formik.values.jobTitle}
+        onChange={formik.handleChange}
+        error={formik.errors.jobTitle}
+      />
+      <CheckboxContainer>
+        <Checkbox
+          type='checkbox'
+          id='agree_id'
+          name='agreement'
+          checked={formik.values.agreement}
           onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.fullName}
         />
-        {formik.touched.fullName && formik.errors.fullName ? (
-          <ErrorMessageStyled>{formik.errors.fullName}</ErrorMessageStyled>
-        ) : null}
-      </FormField>
+        <CheckboxLabel htmlFor="agree_id">I Agree</CheckboxLabel>
+      </CheckboxContainer>
+      <Button name='CREATE' type='submit' disabled={!formik.values.agreement}/>
+    </EmployeeFormContainer>
+  )
+}
 
-      <FormField>
-        <Label htmlFor="age">Age</Label>
-        <StyledInput
-          type="number"
-          id="age"
-          name="age"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.age}
-        />
-        {formik.touched.age && formik.errors.age ? (
-          <ErrorMessageStyled>{formik.errors.age}</ErrorMessageStyled>
-        ) : null}
-      </FormField>
-
-      <FormField>
-        <Label htmlFor="jobTitle">Job Title</Label>
-        <StyledInput
-          type="text"
-          id="jobTitle"
-          name="jobTitle"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.jobTitle}
-        />
-        {formik.touched.jobTitle && formik.errors.jobTitle ? (
-          <ErrorMessageStyled>{formik.errors.jobTitle}</ErrorMessageStyled>
-        ) : null}
-      </FormField>
-
-      <FormField>
-        <Label>
-          <StyledInput
-            type="checkbox"
-            name="terms"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            checked={formik.values.terms}
-          />
-          Правила использования
-        </Label>
-        {formik.touched.terms && formik.errors.terms ? (
-          <ErrorMessageStyled>{formik.errors.terms}</ErrorMessageStyled>
-        ) : null}
-      </FormField>
-
-      <SubmitButton type="submit" disabled={formik.isSubmitting}>
-        Create
-      </SubmitButton>
-    </FormContainer>
-  );
-};
-
-export default EmployeeForm;
+export default EmployeeForm

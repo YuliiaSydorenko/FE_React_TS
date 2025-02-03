@@ -1,4 +1,3 @@
-import React from 'react';
 import { Lesson06Wrapper } from './styles';
 
 function Lesson06() {
@@ -10,6 +9,7 @@ function Lesson06() {
   userName = '';
   userName = 'John';
   let fullName: string = `${userName} Smith`;
+
   let result: string = 1 + 2 + '3';
   console.log(result);
 
@@ -67,45 +67,49 @@ function Lesson06() {
   // - если функция ничего не возвращает - типизируем возврат как void
   const showMessage = (): void => {
     console.log('Hello');
-    colors[1] = 'pink';
-  };
+    colors[1] = 'pink'
+  }
+
   // - если функция возвращает значение, то после двоеточия мы указываем нужный тип
   const getSum = (): number => {
     // const sum: string = '2' + '4';
     const sum: number = 2 + 4;
-    return sum;
-  };
+    return sum
+  }
 
   // 11. Типизация параметров функции - тип подставляется после каждого параметра через :
   const getUserData = (firstName: string, age: number = 18): string => {
-    return `${firstName} - ${age}`;
-  };
+    return `${firstName} - ${age}`
+  }
+
   console.log(getUserData('Nick', 23));
-  getUserData('Tom', 34);
+  getUserData('Tom', 34)
   console.log(getUserData('Mary'));
 
   // 12. Автоматическое определение типов, происходит только при задании значения, так как тип может быть сразу определен
   let name = 'Bob';
   // name = true;
+
   const numbers = [2, 3, 54, 9];
   numbers.push(23);
   // numbers.push('34');
 
   const getNumber = (num = 2) => {
-    return num;
-  };
+    return num
+  }
 
   // 13. Union типы, позволяет указывать несколько типов - типы указываются через знак |
   let color: string | number = 'red';
   color = 2341;
   // color = true;
-  const example: (string | boolean)[] = ['fruit', true];
+  const example: (string | boolean)[] = ['fruit', true]
 
   return (
     <Lesson06Wrapper>
-      Lesson06 - TypeScript Introduction
+      Lesson06-TypeScript Introduction
+      {fullName}
     </Lesson06Wrapper>
-  );
+  )
 }
 
-export default Lesson06;
+export default Lesson06

@@ -1,45 +1,46 @@
-import React, { useState } from 'react';
-import Button from '../Button/Button';
-import { FeedbackWrapper, FeedbackButtons, LikeButton, DislikeButton, ResetButton, Icon } from './styles';
-import { FeedbackProps } from './types';
+import { useState } from "react";
 
-const Feedback: React.FC<FeedbackProps> = () => {
+import Button from "../Button/Button";
+import {
+  FeedbackContainer,
+  FeedbackResultContainer,
+  LikeDislikeContainer,
+  Result
+} from "./styles";
+
+function Feedback() {
   const [likes, setLikes] = useState<number>(0);
-  const [dislikes, setDislikes] = useState<number>(0);
+  const [dislike, setDislike] = useState<number>(0);
+  console.log("render");
 
-  const handleLike = (): void => {
-    setLikes((prevLikes) => prevLikes + 1);
+  const addLike = (): void => {
+    setLikes((prevValue) => prevValue + 1);
   };
 
-  const handleDislike = (): void => {
-    setDislikes((prevDislikes) => prevDislikes + 1);
+  const addDislike = (): void => {
+    setDislike((prevValue) => prevValue + 1);
   };
 
   const resetResults = (): void => {
     setLikes(0);
-    setDislikes(0);
+    setDislike(0);
   };
 
   return (
-    <FeedbackWrapper>
-      <FeedbackButtons>
-        <LikeButton>
-          <Icon src="/src/assets/Like.jpg" alt="Like" />
-          <span>{likes}</span>
-          <Button name="Like" type="button" onClick={handleLike} />
-        </LikeButton>
-        <DislikeButton>
-          <Button name="Dislike" type="button" onClick={handleDislike} />
-          <span>{dislikes}</span>
-          <Icon src="/src/assets/down.jpg" alt="Dislike" />
-        </DislikeButton>
-        <ResetButton>
-          <Button name="Reset Results" type="button" onClick={resetResults} />
-        </ResetButton>
-      </FeedbackButtons>
-    </FeedbackWrapper>
+    <FeedbackContainer>
+      <FeedbackResultContainer>
+        <LikeDislikeContainer>
+          <Result>{likes}</Result>
+          <Button name="LIKE" type="button" onClick={addLike} />
+        </LikeDislikeContainer>
+        <LikeDislikeContainer>
+          <Result>{dislike}</Result>
+          <Button name="DISLIKE" type="button" onClick={addDislike} />
+        </LikeDislikeContainer>
+      </FeedbackResultContainer>
+      <Button name="RESET RESULTS" type="button" onClick={resetResults} />
+    </FeedbackContainer>
   );
 }
 
 export default Feedback;
-

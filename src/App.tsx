@@ -16,10 +16,11 @@ import Users from './pages/Users/Users';
 import User from './pages/Users/components/User/User';
 
 //homeworks
-// import Homework08 from './homeworks/Homework08/Homework08';
-// import Homework09 from './homeworks/Homework09/Homework09';
-// import Homework10 from './homeworks/Homework10/Homework10';
-// import Homework12 from 'homeworks/Homework12/Homework12';
+//import Homework08 from './Homeworks/Homework08/Homework08'; 
+//import Homework09 from './Homeworks/Homework09/homework09'; 
+//import Homework10 from './Homeworks/Homework10/Homework10';
+// import Homework12 from './Homeworks/Homework12/homework12';
+// import Homework10 from 'Homeworks/Homework10/Homework10';
 
 //consultations
 // import Consultation03 from './consultations/Consultation03/Consultation03';

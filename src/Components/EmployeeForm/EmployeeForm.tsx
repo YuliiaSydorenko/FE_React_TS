@@ -1,10 +1,10 @@
 import { useFormik } from "formik";
 import * as Yup from 'yup'
 
-import { Checkbox, CheckboxContainer, CheckboxLabel, EmployeeFormContainer } from "./styles";
+import { Checkbox, CheckboxContainer, CheckboxLabel, EmployeeFormContainer } from "./Styles";
 import { EmployeeFormValues } from "./types";
-import Input from "components/Input/Input";
-import Button from "components/Button/Button";
+import Input from "Components/Input/Input";
+import Button from "Components/Button/Button";
 
 function EmployeeForm() {
   const validationSchema = Yup.object().shape({

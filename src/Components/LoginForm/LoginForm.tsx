@@ -26,6 +26,9 @@ function LoginForm() {
   //   console.log(password);
   // };
 
+  // минимум 8 символов, специальный символ и хотя бы одна заглавная буква
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
   //--- Создание валидационной схемы с помощью Yup
   const schema = Yup.object().shape({
     email: Yup.string()
@@ -34,12 +37,13 @@ function LoginForm() {
       .max(25, 'Max 25 symbols')
       .min(10, 'Min 10 symbols')
       .typeError('Email must be string'),
-    password: Yup.number()
+    password: Yup.string()
       .required('Field password is required')
-      .typeError('Password must be number')
-      .test('Check min password length', 'Min 10 symbols', (value) => String(value).length >= 10)
-      .test('Check max password length', 'Max 20 symbols', (value) => String(value).length <= 20)
-  })
+      .matches(passwordRegex, 'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character')
+      .min(10, 'Min 10 symbols')
+      .max(20, 'Max 20 symbols')
+      .typeError('Password must be string')
+  });
 
   //--- Настройка формы. useFormik, как аргумент принимает объект настройки, для определенной формы
   //При вызове useFormik возвращается объект, в котором хранятся значения из полей, ошибки, различные методы для работы с формой
@@ -50,7 +54,7 @@ function LoginForm() {
       email: '',
       password: ''
     } as LoginFormValues,
-    //validationSchema - свойство, в значение которого нужно передать схеиу для валидации
+    //validationSchema - свойство, в значение которого нужно передать схему для валидации
     validationSchema: schema,
     // свойство validateOnChange по умолчанию true, значит валидация будет происходить при каждом изменении в форме
     validateOnChange: false,
@@ -58,10 +62,9 @@ function LoginForm() {
     onSubmit: (values: LoginFormValues) => {
       console.table(values)
     }
-  })
+  });
 
   console.log(formik);
-
 
   return (
     // <LoginFormContainer onSubmit={onLogin}>
@@ -96,4 +99,5 @@ function LoginForm() {
     </LoginFormContainer>
   );
 }
+
 export default LoginForm;

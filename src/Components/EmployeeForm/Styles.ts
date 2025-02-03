@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 
-export const FormContainer = styled.div`
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 2px solid #007bff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
+export const FormContainer = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 60px;
+  width: 590px;
+  min-height: 350px;
+  max-height: fit-content;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4px;
 `;
 
 export const FormField = styled.div`
@@ -51,4 +54,10 @@ export const SubmitButton = styled.button`
   &:hover {
     background-color: #0056b3;
   }
+`;
+
+export const Title = styled.h2`
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 30px;
 `;

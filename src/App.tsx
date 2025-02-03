@@ -20,6 +20,7 @@ import GlobalStyles from './styles/GlobalStyles';
 //import Homework09 from './Homeworks/Homework09/homework09'; 
 //import Homework10 from './Homeworks/Homework10/Homework10';
 import Homework12 from './Homeworks/Homework12/Homework12';
+import Homework10 from 'Homeworks/Homework10/Homework10';
 
 //consultations
 // import Consultation03 from './consultations/Consultation03/Consultation03';

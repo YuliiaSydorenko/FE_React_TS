@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Field } from 'formik';
 
 export const FormContainer = styled.div`
   max-width: 500px;
@@ -22,7 +21,7 @@ export const Label = styled.label`
   color: #333;
 `;
 
-export const StyledField = styled(Field)`
+export const StyledInput = styled.input`
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;

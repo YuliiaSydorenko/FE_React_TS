@@ -14,6 +14,12 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Users from './pages/Users/Users';
 import User from './pages/Users/components/User/User';
+import Clients from 'pages/Clients/Clients';
+import Facebook from 'pages/Clients/Components/Facebook/Facebook';
+import Google from 'pages/Clients/Components/Google/Google';
+import Amazon from 'pages/Clients/Components/Amazon/Amazon';
+
+//import Clients from 'pages/Clients/Components
 
 //homeworks
 //import Homework08 from './Homeworks/Homework08/Homework08'; 
@@ -41,6 +47,10 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/users' element={<Users />} />
           <Route path='/users/user' element={<User />} />
+          <Route path='/clients' element={<Clients />} />
+          <Route path='/clients/facebook' element={<Facebook />} />
+          <Route path='/clients/google' element={<Google />} />
+          <Route path='/clients/amazon' element={<Amazon />} />
         </Routes>
       </Layout>
       {/* --Topic: TypeScript - Introduction */}

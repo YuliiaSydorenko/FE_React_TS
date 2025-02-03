@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  text-align: center;
-  margin-top: 20px;
-`;
-
-export const Title = styled.h1`
-  font-size: 24px;
-  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 60px;
+ 
 `;

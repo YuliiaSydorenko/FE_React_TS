@@ -10,7 +10,7 @@ function EmployeeForm() {
   const validationSchema = Yup.object().shape({
     fullName: Yup.string()
       .required('Required field')
-      .min(5, 'Min 2 symbols')
+      .min(5, 'Min 5 symbols')
       .max(50, 'Max 50 symbols')
     ,
     age: Yup.number()

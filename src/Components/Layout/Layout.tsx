@@ -22,6 +22,7 @@ function Layout({ children }: LayoutProps) {
             }>
             Home
           </StyledNavLink>
+
           <StyledNavLink
             to='/about'
             style={
@@ -29,6 +30,7 @@ function Layout({ children }: LayoutProps) {
             }>
             About
           </StyledNavLink>
+
           <StyledNavLink
             to='/users'
             style={
@@ -36,6 +38,15 @@ function Layout({ children }: LayoutProps) {
             }>
             Users
           </StyledNavLink>
+
+          <StyledNavLink
+            to='/clients'
+            style={
+              ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })
+            }>
+            Clients
+          </StyledNavLink>
+          
         </NavContainer>
       </Header>
       <Main>{children}</Main>
@@ -46,4 +57,4 @@ function Layout({ children }: LayoutProps) {
   )
 }
 
-export default Layout
+export default Layout;

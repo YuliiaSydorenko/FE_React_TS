@@ -3,8 +3,8 @@ import axios from "axios";
 
 // import Button from "../../components/Button/Button";
 import { ButtonWrapper, ErrorBlock, Lesson10Wrapper, ResultBlock } from "./styles";
-import Spinner from "../../components/Spinner/Spinner";
-import Input from "components/Input/Input";
+import Spinner from "Components/Spinner/Spinner";
+import Input from "Components/Input/Input";
 
 function Lesson10() {
   const [joke, setJoke] = useState<string>('')

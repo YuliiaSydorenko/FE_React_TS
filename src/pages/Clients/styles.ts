@@ -17,7 +17,9 @@ export const StyledLink = styled(Link)`
 `;
 
 export const CompanyPage = styled.div`
+
   padding: 20px;
+  color: blue;
 `;
 
 export const CompanyInfo = styled.p`

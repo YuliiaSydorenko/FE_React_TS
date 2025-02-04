@@ -1,4 +1,4 @@
-import React from 'react';
+//import React from 'react';
 import { ClientsPage, StyledLink } from './styles';
 
 function Clients() {

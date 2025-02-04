@@ -1,3 +1,5 @@
+import { Link, useNavigate } from 'react-router-dom'
+
 import {
   LayoutComponent,
   Header,
@@ -10,10 +12,13 @@ import {
 import { LayoutProps } from './types'
 
 function Layout({ children }: LayoutProps) {
+  const navigate = useNavigate();
+
   return (
     <LayoutComponent>
       <Header>
-        <LogoContainer></LogoContainer>
+        {/* 2 способ перехода на главную страницу при клике на логотип */}
+        <LogoContainer onClick={() => navigate('/')}></LogoContainer>
         <NavContainer>
           <StyledNavLink
             to='/'
@@ -22,7 +27,6 @@ function Layout({ children }: LayoutProps) {
             }>
             Home
           </StyledNavLink>
-
           <StyledNavLink
             to='/about'
             style={
@@ -30,7 +34,6 @@ function Layout({ children }: LayoutProps) {
             }>
             About
           </StyledNavLink>
-
           <StyledNavLink
             to='/users'
             style={
@@ -38,7 +41,6 @@ function Layout({ children }: LayoutProps) {
             }>
             Users
           </StyledNavLink>
-
           <StyledNavLink
             to='/clients'
             style={
@@ -46,15 +48,22 @@ function Layout({ children }: LayoutProps) {
             }>
             Clients
           </StyledNavLink>
-          
+          <StyledNavLink
+            to='/lesson14'
+            style={
+              ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })
+            }>
+            Lesson 14
+          </StyledNavLink>
         </NavContainer>
       </Header>
       <Main>{children}</Main>
       <Footer>
-        <LogoContainer></LogoContainer>
+        {/* 1 способ перехода на главную страницу при клике на логотип */}
+        <Link to='/'><LogoContainer></LogoContainer></Link>
       </Footer>
     </LayoutComponent>
   )
 }
 
-export default Layout;
+export default Layout

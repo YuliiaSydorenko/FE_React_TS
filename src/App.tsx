@@ -1,14 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import GlobalStyles from './styles/GlobalStyles';
 
-//lessons
-// import Lesson06 from './lessons/Lesson06/Lesson06';
-// import Lesson07 from './lessons/Lesson07/Lesson07';
-// import Lesson08 from './lessons/Lesson08/Lesson08';
-// import Lesson09 from './lessons/Lesson09/Lesson09';
-// import Lesson10 from './lessons/Lesson10/Lesson10';
-// import Lesson12 from 'lessons/Lesson12/Lesson12';
-//---Lesson 13
 import Layout from './Components/Layout/Layout';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
@@ -18,6 +10,16 @@ import Clients from 'pages/Clients/Clients';
 import Facebook from 'pages/Clients/Components/Facebook/Facebook';
 import Google from 'pages/Clients/Components/Google/Google';
 import Amazon from 'pages/Clients/Components/Amazon/Amazon';
+import Lesson14 from 'Lessons/Lesson14/Lesson14';
+
+
+//lessons
+// import Lesson06 from './lessons/Lesson06/Lesson06';
+// import Lesson07 from './lessons/Lesson07/Lesson07';
+// import Lesson08 from './lessons/Lesson08/Lesson08';
+// import Lesson09 from './lessons/Lesson09/Lesson09';
+// import Lesson10 from './lessons/Lesson10/Lesson10';
+// import Lesson12 from 'lessons/Lesson12/Lesson12';
 
 //import Clients from 'pages/Clients/Components
 
@@ -51,6 +53,8 @@ function App() {
           <Route path='/clients/facebook' element={<Facebook />} />
           <Route path='/clients/google' element={<Google />} />
           <Route path='/clients/amazon' element={<Amazon />} />
+          <Route path='/lesson14' element={<Lesson14 />} />
+          <Route path='*' element='Страница не найдена' />
         </Routes>
       </Layout>
       {/* --Topic: TypeScript - Introduction */}

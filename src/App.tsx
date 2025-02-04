@@ -11,7 +11,7 @@ import Facebook from 'pages/Clients/Components/Facebook/Facebook';
 import Google from 'pages/Clients/Components/Google/Google';
 import Amazon from 'pages/Clients/Components/Amazon/Amazon';
 import Lesson14 from 'Lessons/Lesson14/Lesson14';
-
+import Homework14 from './Homeworks/Homework14/Homework14'; 
 
 //lessons
 // import Lesson06 from './lessons/Lesson06/Lesson06';
@@ -54,6 +54,7 @@ function App() {
           <Route path='/clients/google' element={<Google />} />
           <Route path='/clients/amazon' element={<Amazon />} />
           <Route path='/lesson14' element={<Lesson14 />} />
+          <Route path='/homework14' element={<Homework14 />} /> 
           <Route path='*' element='Страница не найдена' />
         </Routes>
       </Layout>

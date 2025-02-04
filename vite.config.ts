@@ -9,7 +9,7 @@ export default defineConfig({
     alias: {
       'assets': path.resolve(__dirname, 'src/assets'),
       'components': path.resolve(__dirname, 'src/components'),
-      'homeworks': path.resolve(__dirname, 'src/homeworks'),
+      'Homeworks': path.resolve(__dirname, 'src/homeworks'),
       'Lessons': path.resolve(__dirname, 'src/Lessons'),
       'pages': path.resolve(__dirname, 'src/pages'),
       'consultations': path.resolve(__dirname, 'src/consultations'),

@@ -1,5 +1,4 @@
-import { CompanyPage, CompanyInfo } from '../../styles'
-<style></style>
+import { CompanyPage, CompanyInfo } from '../../styles';
 
 function Facebook() {
   return (

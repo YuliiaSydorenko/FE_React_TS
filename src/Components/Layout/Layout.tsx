@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
 
 import {
   LayoutComponent,
@@ -8,8 +8,8 @@ import {
   Main,
   Footer,
   StyledNavLink
-} from './styles'
-import { LayoutProps } from './types'
+} from './styles';
+import { LayoutProps } from './types';
 
 function Layout({ children }: LayoutProps) {
   const navigate = useNavigate();
@@ -55,6 +55,13 @@ function Layout({ children }: LayoutProps) {
             }>
             Lesson 14
           </StyledNavLink>
+          <StyledNavLink
+            to='/homework14'
+            style={
+              ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })
+            }>
+            Homework 14
+          </StyledNavLink>
         </NavContainer>
       </Header>
       <Main>{children}</Main>
@@ -63,7 +70,7 @@ function Layout({ children }: LayoutProps) {
         <Link to='/'><LogoContainer></LogoContainer></Link>
       </Footer>
     </LayoutComponent>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

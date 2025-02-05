@@ -7,7 +7,7 @@ export const CardWrapper = styled.div`
   border-radius: 5px;
   width: 300px;
   margin-top: 20px;
-  background-color: #d8c2e7;
+  background-color: #f4f2f5;
 `;
 
 export const CardTitle = styled.h2`

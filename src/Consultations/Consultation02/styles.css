@@ -1,0 +1,17 @@
+.consultation_02_wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 80px;
+  align-items: center;
+  gap: 30px;
+}
+
+.ingredients {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.button_contatiner {
+  width: 500px;
+}

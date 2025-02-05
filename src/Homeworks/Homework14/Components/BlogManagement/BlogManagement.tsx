@@ -4,12 +4,12 @@ import { BlogManagementWrapper, Input, Button } from './styles';
 
 interface BlogContextProps {
   message: string;
-  setMessage: (message: string) => void;
+//   setMessage: (message: string) => void;
 }
 
 export const BlogContext = createContext<BlogContextProps>({
-  message: '',
-  setMessage: () => {}
+  message: ''
+//   ,setMessage: () => {}
 });
 
 const BlogManagement: FC = () => {
@@ -22,7 +22,9 @@ const BlogManagement: FC = () => {
   };
 
   return (
-    <BlogContext.Provider value={{ message, setMessage }}>
+    <BlogContext.Provider value={{ message
+    // , setMessage 
+    }}>
       <BlogManagementWrapper>
         <Input
           type="text"
@@ -38,3 +40,8 @@ const BlogManagement: FC = () => {
 };
 
 export default BlogManagement;
+
+
+
+
+
